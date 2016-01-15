@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ngDraggable',
+    'pactometro'
   ]).config(function($stateProvider, $urlRouterProvider) {
     
     $urlRouterProvider.otherwise('/home');
