@@ -61,6 +61,7 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
+          '<%= yeoman.app %>/components/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
@@ -376,7 +377,7 @@ module.exports = function (grunt) {
           usemin: 'components/components.js'
         },
         cwd: '<%= yeoman.app %>',
-        src: 'components/{,*/}*.html',
+        src: '<components></components>/{,*/}*.html',
         dest: '.tmp/templateCache.js'
       }
     },
