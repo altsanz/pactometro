@@ -1,37 +1,13 @@
-
-<div class="jumbotron text-center in-favour">
-    <p>A favor</p>    
+<div ng-drop="true" ng-drop-success="pactometro.onDropComplete($data,$event)" class="jumbotron text-center in-favour">
+    <p>A favor</p>
     <h1>200</h1>
 </div>
-<div class="jumbotron text-center abstention">
-    <p>Abstención</p>    
+<div ng-drop="true" ng-drop-success="pactometro.onDropComplete($data,$event)" class="jumbotron text-center abstention">
+    <p>Abstención</p>
     <h1>50</h1>
 </div>
-
-<div class="jumbotron text-center against">
-    <p>En contra</p>    
+<div ng-drop="true" ng-drop-success="pactometro.onDropComplete($data,$event)" class="jumbotron text-center against">
+    <p>En contra</p>
     <h1>50</h1>
 </div>
-
-
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-<button class="party btn btn-default" ng-drag="true" ng-drag-data="{ name: 'party' }" data-allow-transform="true">Party</button>
-
-
+<div ng-repeat="party in pactometro.parties" class="party btn btn-default" ng-drag="true" ng-drag-data="party" data-allow-transform="true">{{party.name}} - {{ party.seats }}</div>
