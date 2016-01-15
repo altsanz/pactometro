@@ -27,7 +27,8 @@ angular
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/home',
-            templateUrl: 'components/pactometro/pactometro.html'
+            templateUrl: 'components/pactometro/pactometro.html',
+            controller: 'pactometroCtrl as pactometro'
         })
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
