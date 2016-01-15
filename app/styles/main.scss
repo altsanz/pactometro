@@ -6,3 +6,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .in-favour, .against, .abstention {
   @include make-sm-column(4);
 }
+
+.party {
+  @include make-sm-column(3);
+}
