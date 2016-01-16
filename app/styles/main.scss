@@ -10,3 +10,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .party {
   @include make-sm-column(3);
 }
+
+.in-favour {
+  background-color: #DFF0D8;
+}
+
+.abstention {
+  background-color: #FCF8E3;
+}
+
+.against {
+  background-color: #F2DEDE;
+}

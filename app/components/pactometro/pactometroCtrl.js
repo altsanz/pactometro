@@ -48,18 +48,37 @@ angular.module('pactometro').controller('pactometroCtrl', [function() {
     return totalSeats;
   };
 
+  var checkPartyExistsOnList = function(partyName, partyList) {
+    for (var i = partyList.length - 1; i >= 0; i--) {
+      if(partyList[i].name === partyName) {
+        return true;
+      }
+    }
+
+    return false;
+  };
 
   this.onInFavourDropComplete = function(data, event) {
-    this.inFavourParties.push(data);
-    console.log(data);
-    console.log(event);
+    if(!checkPartyExistsOnList(data.name, this.inFavourParties)) {
+      this.inFavourParties.push(data);
+    }
+    return true;
+    
   };
+
+  this.addPartyToAvailableParties = function(data, event) {
+    if(!checkPartyExistsOnList(data.name, this.availableParties)) {
+      this.availableParties.push(data);
+    }
+  };
+  
   this.onAbstentionDropComplete = function(data, event) {
     this.abstentionParties.push(data);
     
     console.log(data);
     console.log(event);
   };
+
   this.onAgainstDropComplete = function(data, event) {
     this.againstParties.push(data);
     
@@ -68,8 +87,23 @@ angular.module('pactometro').controller('pactometroCtrl', [function() {
   };
 
   this.removePartyFromAvailableParties = function(partyName) {
+    console.log('INSIDE REMOVE');
     var baseAvailableParties = this.availableParties;
     this.availableParties = baseAvailableParties.filter(function(party) {
+      return party.name !== partyName;
+    });
+  };
+
+  this.removePartyFromInFavourParties = function(partyName) {
+    var baseAvailableParties = this.inFavourParties;
+    this.inFavourParties = baseAvailableParties.filter(function(party) {
+      return party.name !== partyName;
+    });
+  };
+
+  this.removePartyFromPartyList = function(partyList, partyName) {
+    var baseAvailableParties = this[partyList];
+    this[partyList] = baseAvailableParties.filter(function(party) {
       return party.name !== partyName;
     });
   };

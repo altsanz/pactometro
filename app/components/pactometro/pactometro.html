@@ -1,22 +1,21 @@
 <div class="row">
-<div ng-drop="true" ng-drop-success="pactometro.onInFavourDropComplete($data,$event)" class="jumbotron text-center in-favour">
-    <p>A favor</p>
-    <h1>{{pactometro.getTotalSeatsByPosition(pactometro.inFavourParties)}}</h1>
-    <div ng-repeat="party in pactometro.inFavourParties">{{party.name}} - {{ party.seats }}</div>
+    <div ng-drop="true" ng-drop-success="pactometro.onInFavourDropComplete($data,$event)" class="jumbotron in-favour text-center in-favour">
+        <p>A favor</p>
+        <h1>{{ pactometro.getTotalSeatsByPosition(pactometro.inFavourParties) }}</h1>
+        <div ng-repeat="party in pactometro.inFavourParties" class="btn btn-default" ng-drag="true" ng-drag-data="party" ng-drag-success="pactometro.removePartyFromPartyList('inFavourParties', party.name)" data-allow-transform="true">{{party.name}} - {{ party.seats }}</div>
+    </div>
+    <div ng-drop="true" ng-drop-success="pactometro.onAbstentionDropComplete($data,$event)" class="jumbotron abstention text-center abstention">
+        <p>Abstención</p>
+        <h1>{{pactometro.getTotalSeatsByPosition(pactometro.abstentionParties)}}</h1>
+        <div ng-repeat="party in pactometro.abstentionParties" class="btn btn-default" ng-drag="true" ng-drag-data="party" ng-drag-success="pactometro.removePartyFromPartyList('abstentionParties', party.name)" data-allow-transform="true">{{party.name}} - {{ party.seats }}</div>
+        <!-- <div ng-repeat="party in pactometro.abstentionParties">{{party.name}} - {{ party.seats }}</div> -->
+    </div>
+    <div ng-drop="true" ng-drop-success="pactometro.onAgainstDropComplete($data,$event)" class="jumbotron against text-center against">
+        <p>En contra</p>
+        <h1>{{pactometro.getTotalSeatsByPosition(pactometro.againstParties)}}</h1>
+        <div ng-repeat="party in pactometro.againstParties" class="btn btn-default" ng-drag="true" ng-drag-data="party" ng-drag-success="pactometro.removePartyFromPartyList('againstParties', party.name)" data-allow-transform="true">{{party.name}} - {{ party.seats }}</div>
+    </div>
 </div>
-<div ng-drop="true" ng-drop-success="pactometro.onAbstentionDropComplete($data,$event)" class="jumbotron text-center abstention">
-    <p>Abstención</p>
-    <h1>{{pactometro.getTotalSeatsByPosition(pactometro.abstentionParties)}}</h1>
-    <div ng-repeat="party in pactometro.abstentionParties">{{party.name}} - {{ party.seats }}</div>
-
-</div>
-<div ng-drop="true" ng-drop-success="pactometro.onAgainstDropComplete($data,$event)" class="jumbotron text-center against">
-    <p>En contra</p>
-    <h1>{{pactometro.getTotalSeatsByPosition(pactometro.againstParties)}}</h1>
-    <div ng-repeat="party in pactometro.againstParties">{{party.name}} - {{ party.seats }}</div>
-
-</div>
-</div>
-<div class="row">
-<div ng-repeat="party in pactometro.availableParties" class="party btn btn-default" ng-drag="true" ng-drag-data="party" ng-drag-success="pactometro.removePartyFromAvailableParties(party.name)" data-allow-transform="true">{{party.name}} - {{ party.seats }}</div>
+<div class="row" ng-drop="true" ng-drop-success="pactometro.addPartyToAvailableParties($data, $event)">
+    <div ng-repeat="party in pactometro.availableParties" class="party btn btn-default" ng-drag="true" ng-drag-data="party" ng-drag-success="pactometro.removePartyFromAvailableParties(party.name)" data-allow-transform="true">{{party.name}} - {{ party.seats }}</div>
 </div>
