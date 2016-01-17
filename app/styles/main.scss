@@ -1,9 +1,9 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
 
-.in-favour, .against, .abstention {
+.voting-box {
   @include make-sm-column(4);
 }
 
@@ -11,14 +11,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   @include make-sm-column(3);
 }
 
-.in-favour {
-  background-color: #DFF0D8;
+.jumbotron {
+  border-radius: 0;
 }
 
-.abstention {
-  background-color: #FCF8E3;
-}
-
-.against {
-  background-color: #F2DEDE;
+.party.btn {
+  z-index: 99999;
 }
