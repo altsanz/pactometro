@@ -22,3 +22,18 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .party.btn {
   z-index: 99999;
 }
+
+.footer {
+  text-align: center;
+}
+
+.voting-box > .panel {
+  min-height: 250px;
+}
+
+.pool-parties {
+  @include make-sm-column(12);
+  .panel {
+    min-height: 200px;
+  }
+}

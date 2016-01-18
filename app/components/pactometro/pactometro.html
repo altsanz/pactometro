@@ -53,7 +53,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="pool-parties">
         <div class="panel panel-default" ng-drop="true" ng-drop-success="pactometro.addPartyToAvailableParties($data, $event)">
             <div class="panel-body">
                 <div ng-repeat="party in pactometro.availableParties" class="party btn btn-default" ng-drag="true" ng-drag-data="party" ng-drag-success="pactometro.removePartyFromPartyList('availableParties',  party.name)" data-allow-transform="true">{{party.name}} - {{ party.seats }}</div>
