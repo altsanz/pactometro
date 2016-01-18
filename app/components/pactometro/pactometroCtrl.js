@@ -94,18 +94,18 @@ angular.module('pactometro').controller('pactometroCtrl', [function() {
     });
   };
 
-  this.removePartyFromInFavourParties = function(partyName) {
-    var baseAvailableParties = this.inFavourParties;
-    this.inFavourParties = baseAvailableParties.filter(function(party) {
-      return party.name !== partyName;
-    });
-  };
+
 
   this.removePartyFromPartyList = function(partyList, partyName) {
     var baseAvailableParties = this[partyList];
     this[partyList] = baseAvailableParties.filter(function(party) {
       return party.name !== partyName;
     });
+  };
+
+  this.getPercentage = function(seats) {
+    debugger;
+    return seats/350*100 + '%';
   };
 
 

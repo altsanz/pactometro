@@ -17,7 +17,9 @@ angular
     'ngTouch',
     'ui.router',
     'ngDraggable',
+    'ui.bootstrap',
     'pactometro'
+
   ]).config(function($stateProvider, $urlRouterProvider) {
     
     $urlRouterProvider.otherwise('/home');
